@@ -32,7 +32,7 @@ const Repos = ({ match }) => {
         {repos.length === 0 && (
           <>
             <h1 style={{ textAlign: "center", marginTop: "10px" }}>
-              Esse usuário não possui repos!
+              Esse usuário não possui repositórios!
             </h1>
             <img
               src={Cancel}

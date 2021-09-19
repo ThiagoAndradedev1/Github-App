@@ -24,7 +24,7 @@ const Starred = ({ match }) => {
         {noResult && (
           <>
             <h1 style={{ textAlign: "center", marginTop: "10px" }}>
-              Aconteceu um erro ao recuperar os starred!
+              Aconteceu um erro ao recuperar os favoritos!
             </h1>
             <img src={Warning} alt="warning" style={{ height: "250px" }} />
           </>
@@ -32,7 +32,7 @@ const Starred = ({ match }) => {
         {starred.length === 0 && (
           <>
             <h1 style={{ textAlign: "center", marginTop: "10px" }}>
-              Esse usuário não possui starred!
+              Esse usuário não possui favoritos!
             </h1>
             <img
               src={Engineers}
