@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useCallback, useReducer } from "react";
 import GithubContext from "./GithubContext";
 import axios from "axios";
 import GithubReducer from "./GithubReducer";
@@ -8,14 +8,16 @@ import {
   SEARCH_STARRED,
   CLEAR_USERS,
   SET_LOADING,
+  HANDLE_ERROR,
 } from "../types";
 
 const Github = (props) => {
   const initialState = {
-    user: [],
+    user: {},
     repos: [],
     starred: [],
     loading: false,
+    noResult: false,
   };
 
   const [state, dispatch] = useReducer(GithubReducer, initialState);
@@ -23,41 +25,57 @@ const Github = (props) => {
   const getUser = async (username) => {
     setLoading();
 
-    const res = await axios.get(`https://api.github.com/users/${username}`);
+    try {
+      const res = await axios.get(`https://api.github.com/users/${username}`);
 
-    console.log(res);
-
-    dispatch({
-      type: SEARCH_USER,
-      payload: res.data,
-    });
+      dispatch({
+        type: SEARCH_USER,
+        payload: res.data,
+      });
+    } catch (error) {
+      dispatch({
+        type: HANDLE_ERROR,
+      });
+    }
   };
 
-  const getRepos = async (username) => {
-    setLoading();
+  const getRepos = useCallback(async (username) => {
+    try {
+      setLoading();
 
-    const res = await axios.get(
-      `https://api.github.com/users/${username}/repos`
-    );
+      const res = await axios.get(
+        `https://api.github.com/users/${username}/repos`
+      );
 
-    dispatch({
-      type: SEARCH_REPOS,
-      payload: res.data,
-    });
-  };
+      dispatch({
+        type: SEARCH_REPOS,
+        payload: res.data,
+      });
+    } catch (error) {
+      dispatch({
+        type: HANDLE_ERROR,
+      });
+    }
+  }, []);
 
-  const getStarred = async (username) => {
-    setLoading();
+  const getStarred = useCallback(async (username) => {
+    try {
+      setLoading();
 
-    const res = await axios.get(
-      `https://api.github.com/users/${username}/starred}`
-    );
+      const res = await axios.get(
+        `https://api.github.com/users/${username}/starred`
+      );
 
-    dispatch({
-      type: SEARCH_STARRED,
-      payload: res.data,
-    });
-  };
+      dispatch({
+        type: SEARCH_STARRED,
+        payload: res.data,
+      });
+    } catch (error) {
+      dispatch({
+        type: HANDLE_ERROR,
+      });
+    }
+  }, []);
 
   const clearUsers = () => dispatch({ type: CLEAR_USERS });
 
@@ -70,6 +88,7 @@ const Github = (props) => {
         repos: state.repos,
         starred: state.starred,
         loading: state.loading,
+        noResult: state.noResult,
         getRepos,
         getUser,
         getStarred,
