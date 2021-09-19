@@ -5,6 +5,7 @@ import AlertState from "../src/context/alert/AlertState";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 import Repos from "./components/user/Repos";
 import Starred from "./components/user/Starred";
 import "./App.css";
@@ -23,6 +24,7 @@ const App = () => {
               <Route exact path="/starred/:name" component={Starred} />
             </Switch>
           </div>
+          <Footer />
         </Router>
       </GithubState>
     </AlertState>
