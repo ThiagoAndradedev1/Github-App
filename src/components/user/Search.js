@@ -13,7 +13,6 @@ const Search = () => {
   const { setAlert } = alertContext;
 
   const onSubmit = (e) => {
-    console.log(user);
     e.preventDefault();
     if (username === "") {
       setAlert("Você precisa digitar algo.", "danger");
@@ -27,15 +26,7 @@ const Search = () => {
 
   return (
     <div>
-      <img
-        src={git}
-        style={{
-          margin: "auto",
-          display: "block",
-          width: "250px",
-        }}
-        alt="usergit"
-      />
+      <img src={git} className="gitImg" alt="usergit" />
       <form onSubmit={onSubmit} className="form">
         <Alert />
         <input
@@ -46,16 +37,12 @@ const Search = () => {
           onChange={onChange}
         />
         <button className="btn btn-dark btn-block" type="submit">
-          <i class="fas fa-search" style={{ marginRight: "5px" }}></i> Pesquisar
+          <i className="fas fa-search mr-5"></i> Pesquisar
         </button>
       </form>
       {user && (
-        <button
-          style={{ marginTop: "10px" }}
-          className="btn btn-danger btn-block"
-          onClick={clearUsers}
-        >
-          <i style={{ marginRight: "5px" }} class="fas fa-trash-alt"></i> Limpar
+        <button className="btn btn-danger btn-block mt-10" onClick={clearUsers}>
+          <i className="fas fa-trash-alt mr-5"></i> Limpar
         </button>
       )}
     </div>

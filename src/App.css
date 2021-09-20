@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-  color: #666;
+  color: #d3d3d3;
 }
 
 ul {
@@ -52,6 +52,14 @@ img {
   font-size: 4rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+}
+
+.fontSizeMd {
+  font-size: 1.2rem;
+}
+
+.fontSizeSm {
+  font-size: 0.8rem;
 }
 
 .large {
@@ -85,6 +93,10 @@ img {
   color: var(--danger-color);
 }
 
+.text-white {
+  color: white;
+}
+
 .text-center {
   text-align: center;
 }
@@ -114,6 +126,76 @@ img {
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
   background-color: #f5f5f5;
+}
+
+/* Spinner */
+.spinnerStyle {
+  width: 200px;
+  margin: auto;
+  display: block;
+}
+
+/* About */
+.centerAboutElements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  margin-top: 55px;
+  padding: 50px;
+}
+
+.aboutImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.centerSocialMedia {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.blackBg {
+  color: black;
+}
+
+/* Repos */
+
+.heightImg {
+  height: 250px;
+}
+
+.widthImgAvatar {
+  width: 150px;
+}
+
+.cancelImg {
+  height: 250px;
+  margin-top: 30px;
+}
+
+/* ReposItems */
+
+.nameStyle {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.descriptionStyle {
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+/* Search */
+
+.gitImg {
+  margin: auto;
+  display: block;
+  width: 250px;
 }
 
 /* List */
@@ -151,6 +233,10 @@ img {
   padding: 3rem 0;
 }
 
+.pr-15 {
+  padding-right: 15px;
+}
+
 /* Margin */
 .m {
   margin: 0.5rem;
@@ -164,6 +250,51 @@ img {
 .m-3 {
   margin: 3rem;
 }
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mr-25 {
+  margin-right: 25px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-4 {
+  margin-right: 4px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
 .my {
   margin: 0.5rem 0;
 }
@@ -319,6 +450,28 @@ button[disabled] {
   border-radius: 50%;
 }
 
+.icon-bg-white {
+  color: white;
+}
+
+/* Header */
+.alignHeaderElementsCenter {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.alignHeaderOptions {
+  margin-top: 15px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
 /* Forms */
 input {
   margin: 1.2rem 0;
@@ -396,6 +549,10 @@ table th {
   text-align: center;
   font-size: 1.2rem;
   margin-top: 20px;
+}
+
+.footerTextSize {
+  font-size: 1rem;
 }
 
 /* Mobile Styles */

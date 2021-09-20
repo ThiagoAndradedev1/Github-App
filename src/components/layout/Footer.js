@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div class="footer">
-      <p>
-        Made with <i style={{ color: "red" }} class="fas fa-heart"></i> by
+    <div className="footer">
+      <p className="footerTextSize">
+        Made with <i className="fas fa-heart text-danger"></i> by
         @ThiagoAndradedev1
       </p>
     </div>

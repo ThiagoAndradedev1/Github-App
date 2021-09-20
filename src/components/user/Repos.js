@@ -23,27 +23,22 @@ const Repos = ({ match }) => {
       <Fragment>
         {noResult && (
           <>
-            <h1 style={{ textAlign: "center", marginTop: "10px" }}>
+            <h1 className="mt-10 text-center">
               Aconteceu um erro ao recuperar os Repositórios!
             </h1>
-            <img src={Warning} alt="warning" style={{ height: "250px" }} />
+            <img src={Warning} alt="warning" className="heightImg" />
           </>
         )}
         {repos.length === 0 && (
           <>
-            <h1 style={{ textAlign: "center", marginTop: "10px" }}>
+            <h1 className="mt-10 text-center">
               Esse usuário não possui repositórios!
             </h1>
-            <img
-              src={Cancel}
-              alt="cancel"
-              style={{ height: "250px", marginTop: "30px" }}
-            />
+            <img src={Cancel} alt="cancel" className="cancelImg" />
           </>
         )}
         <div className="grid-3">
           {repos.map((repo) => {
-            console.log(repo);
             return <ReposItems key={repo.id} repo={repo} />;
           })}
         </div>

@@ -8,8 +8,6 @@ const User = () => {
   const githubcontext = useContext(GithubContext);
   const { user, loading, noResult } = githubcontext;
 
-  console.log(user);
-
   const { login, avatar_url, followers, following, location, public_repos } =
     user;
 
@@ -20,10 +18,8 @@ const User = () => {
       <>
         {noResult && (
           <>
-            <h1 style={{ textAlign: "center", marginTop: "10px" }}>
-              Esse usuário não existe!
-            </h1>
-            <img src={Warning} alt="warning" style={{ height: "250px" }} />
+            <h1 className="mt-10 text-center">Esse usuário não existe!</h1>
+            <img src={Warning} alt="warning" className="heightImg" />
           </>
         )}
         {user.login && (
@@ -31,9 +27,9 @@ const User = () => {
             <div className="all-center">
               <img
                 src={avatar_url}
-                className="round-img"
-                alt=""
-                style={{ width: "150px" }}
+                className="round-img widthImgAvatar"
+                alt="avatarurl"
+                width="150px"
               />
             </div>
             <ul>
@@ -68,14 +64,13 @@ const User = () => {
               to={`/repos/${login}`}
               className="btn btn-dark btn-sm text-center"
             >
-              <i style={{ marginRight: "5px" }} class="fas fa-box-open"></i>{" "}
-              Repos
+              <i className="fas fa-box-open mr-5"></i> Repos
             </Link>
             <Link
               to={`/starred/${login}`}
               className="btn btn-dark btn-sm text-center"
             >
-              <i class="fas fa-star" style={{ marginRight: "5px" }}></i> Starred
+              <i className="fas fa-star mr-5"></i> Starred
             </Link>
           </div>
         )}

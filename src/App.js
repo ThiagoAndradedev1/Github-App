@@ -8,6 +8,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Repos from "./components/user/Repos";
 import Starred from "./components/user/Starred";
+import NotFound from "./components/pages/NotFound";
 import "./App.css";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
               <Route exact path="/about" component={About} />
               <Route exact path="/repos/:name" component={Repos} />
               <Route exact path="/starred/:name" component={Starred} />
+              <Route component={NotFound} />
             </Switch>
           </div>
           <Footer />

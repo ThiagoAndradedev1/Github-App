@@ -3,36 +3,19 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div
-      style={{
-        backgroundColor: "black",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        padding: "10px",
-      }}
-    >
-      <h1 style={{ color: "white" }}>
-        <i style={{ marginRight: "10px" }} class="fab fa-github"></i>GitHubApp
+    <div className="alignHeaderElementsCenter">
+      <h1 className="text-white">
+        <i className="fab fa-github mt-15 mr-10"></i>GitHubApp
       </h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "15px",
-          cursor: "pointer",
-          color: "white",
-        }}
-      >
-        <Link style={{ color: "white" }} to={`/`}>
-          <h3 style={{ marginRight: "25px" }}>
-            <i class="fas fa-home" style={{ marginRight: "4px" }}></i> Home
+      <div className="alignHeaderOptions">
+        <Link className="icon-bg-white" to={`/`}>
+          <h3 className="mr-25">
+            <i className="fas fa-home mr-4"></i> Home
           </h3>
         </Link>
-        <Link to={`/about`} style={{ color: "white" }}>
-          <h3 style={{ marginRight: "20px" }}>
-            <i style={{ marginRight: "8px" }} class="fas fa-address-card"></i>
+        <Link to={`/about`} className="icon-bg-white">
+          <h3 className="mr-20">
+            <i className="fas fa-address-card mr-8"></i>
             About
           </h3>
         </Link>

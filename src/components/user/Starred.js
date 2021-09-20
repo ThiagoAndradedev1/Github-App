@@ -23,27 +23,22 @@ const Starred = ({ match }) => {
       <Fragment>
         {noResult && (
           <>
-            <h1 style={{ textAlign: "center", marginTop: "10px" }}>
+            <h1 className="mt-10 text-center">
               Aconteceu um erro ao recuperar os favoritos!
             </h1>
-            <img src={Warning} alt="warning" style={{ height: "250px" }} />
+            <img src={Warning} alt="warning" className="heightImg" />
           </>
         )}
         {starred.length === 0 && (
           <>
-            <h1 style={{ textAlign: "center", marginTop: "10px" }}>
+            <h1 className="mt-10 text-center">
               Esse usuário não possui favoritos!
             </h1>
-            <img
-              src={Engineers}
-              alt="Engineers"
-              style={{ height: "250px", marginTop: "30px" }}
-            />
+            <img src={Engineers} alt="Engineers" className="mt-30 heightImg" />
           </>
         )}
         <div className="grid-3">
           {starred.map((star) => {
-            console.log(star);
             return <StarredItems key={star.id} star={star} />;
           })}
         </div>
