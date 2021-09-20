@@ -13,7 +13,7 @@
 
 ## 🔥 Acesse o Website <a name = "acesse_website"></a>
 
-<a href="https://rickandmorty-604f7.web.app/">Acesse aqui!</a>
+<a href="https://github-app-eta.vercel.app/">Acesse aqui!</a>
 
 ## 📝 Índice
 
