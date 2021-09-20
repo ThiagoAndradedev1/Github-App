@@ -4,9 +4,12 @@ const ReposItems = ({
   repo: { description, forks, watchers, full_name, watchers_count, html_url },
 }) => {
   return (
-    <div className="card text-center">
+    <div
+      className="card text-center container
+    "
+    >
       <a href={html_url}>
-        <h1 className="text-success nameStyle">{full_name}</h1>
+        <h1 className="text-success nameStyle text-center">{full_name}</h1>
       </a>
       <h3 className="descriptionStyle ">{description}</h3>
       <h6 className="badge badge-success">{forks} Forks</h6>

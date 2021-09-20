@@ -12,9 +12,9 @@ const ReposItems = ({
   },
 }) => {
   return (
-    <div className="card text-center">
+    <div className="card text-center container">
       <a href={html_url}>
-        <h1 className="text-success mb-8 fontSizeMd">{full_name}</h1>
+        <h1 className="text-success mb-8 nameStyle">{full_name}</h1>
       </a>
       <h4>Dev Original:</h4>{" "}
       <h3 className="badge badge-dark mb-8">@{owner.login}</h3>
